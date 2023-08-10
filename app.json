@@ -2,7 +2,7 @@
   "expo": {
     "name": "initium",
     "slug": "initium",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -15,16 +15,31 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.mauricioreyes.initium",
+      "buildNumber": "2.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Se requiere acceso a la cámara para tomar fotos y grabar videos."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2affe795-42f6-4f84-973c-411801a7e94f"
+      }
+    },
+    "owner": "mauricioreyes"
   }
 }

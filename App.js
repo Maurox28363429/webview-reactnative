@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
-export default function App() {
+import React from 'react';
+import {StyleSheet, Text, SafeAreaView} from 'react-native';
+import {WebView} from 'react-native-webview';
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <WebView
+        source={{uri: 'https://app.initium.phoenixtechsa.com/'}}
+        useWebKit
+        originWhitelist={['*']}
+        allowsInlineMediaPlayback
+      />
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 25,
+    fontWeight: '500',
   },
 });
+
+export default App;
